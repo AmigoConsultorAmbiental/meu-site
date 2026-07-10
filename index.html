@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoria Ambiental | Tríade Consultoria Ambiental | Brasil</title>
+<meta name="description" content="A Tríade é uma consultoria especializada em licenciamento e regularização ambiental de empreendimentos novos, em implantação ou operação. Equipe multidisciplinar em meio ambiente, engenharia, biologia, saúde e segurança.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canopy:#16302A;
+    --clay:#A15C34;
+    --sand:#F1E7D6;
+    --limestone:#FAF6EF;
+    --moss:#4C7A5E;
+    --gold:#C9932E;
+    --ink:#1B211D;
+    --line: rgba(27,33,29,0.12);
+    --maxw: 1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--limestone);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0 0 .5em; line-height:1.08; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay);
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;background:var(--clay);
+    display:inline-block;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(1.25rem, 4vw, 2.5rem);}
+  section{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+  .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(250,246,239,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.85rem clamp(1.25rem,4vw,2.5rem);
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:.65rem; font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;}
+  .brand img{width:38px;height:38px;border-radius:50%; object-fit:cover;}
+  nav ul{list-style:none; display:flex; gap:clamp(1rem,2vw,2rem); margin:0; padding:0;}
+  nav ul a{
+    font-size:.92rem; font-weight:500; position:relative; padding:.3rem 0;
+  }
+  nav ul a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--clay);
+    transition:width .25s ease;
+  }
+  nav ul a:hover::after, nav ul a:focus-visible::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:.75rem;}
+  .icon-btn{
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:var(--canopy); color:var(--sand); transition:background .2s ease, transform .2s ease;
+  }
+  .icon-btn:hover{background:var(--moss); transform:translateY(-2px);}
+  .burger{
+    display:none; width:42px; height:42px; border-radius:10px; border:1px solid var(--line);
+    background:none; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+  }
+  .burger span{width:20px; height:2px; background:var(--ink); display:block;}
+  #nav-toggle{display:none;}
+
+  @media (max-width:860px){
+    nav#primary-nav ul{
+      position:fixed; inset:64px 0 auto 0; background:var(--limestone);
+      flex-direction:column; padding:1.25rem clamp(1.25rem,4vw,2.5rem) 2rem;
+      gap:0; border-bottom:1px solid var(--line);
+      transform:translateY(-140%); opacity:0; transition:transform .35s ease, opacity .3s ease;
+      max-height:70vh; overflow:auto;
+    }
+    nav#primary-nav ul li{border-bottom:1px solid var(--line);}
+    nav#primary-nav ul a{display:block; padding:.9rem 0;}
+    #nav-toggle:checked ~ #primary-nav ul{transform:translateY(0); opacity:1;}
+    .burger{display:flex;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--canopy); color:var(--sand);
+    padding:clamp(3rem,9vw,6rem) 0 clamp(4rem,10vw,7rem);
+  }
+  .hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
+  @media (max-width:900px){ .hero .wrap{grid-template-columns:1fr;} }
+  .hero h1{color:var(--limestone); font-size:clamp(2rem,4.4vw,3.2rem); font-weight:600;}
+  .hero h1 em{color:var(--gold); font-style:normal;}
+  .hero p{max-width:56ch; color:rgba(250,246,239,0.86); font-size:1.05rem;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:.85rem; margin-top:1.6rem;}
+  .btn{
+    font-weight:600; font-size:.95rem; padding:.85rem 1.5rem; border-radius:100px;
+    display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{background:var(--gold); color:var(--canopy);}
+  .btn-ghost{border:1px solid rgba(250,246,239,0.4); color:var(--sand);}
+  .btn:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(0,0,0,0.25);}
+
+  /* Triad venn signature */
+  .triad-mark{width:100%; max-width:380px; margin:0 auto; aspect-ratio:1/1;}
+  .triad-mark svg{width:100%; height:100%;}
+  .triad-mark .lab{font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.08em; fill:var(--limestone); text-transform:uppercase;}
+
+  /* ===== MISSAO / VISAO / VALORES ===== */
+  .pillars-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem;
+  }
+  @media (max-width:760px){ .pillars-grid{grid-template-columns:1fr;} }
+  .pillar-card{
+    background:var(--limestone); border:1px solid var(--line); border-radius:18px;
+    padding:2rem 1.6rem; position:relative; overflow:hidden;
+  }
+  .pillar-card .ring{
+    width:52px; height:52px; border-radius:50%; border:2px solid var(--clay);
+    display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem;
+    font-family:'Space Mono',monospace; color:var(--clay); font-size:.78rem;
+  }
+  .pillar-card h3{font-size:1.25rem;}
+  .why-block{
+    margin-top:2.5rem; background:var(--sand); border-radius:20px; padding:clamp(1.75rem,4vw,3rem);
+    display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:center;
+  }
+  @media (max-width:760px){ .why-block{grid-template-columns:1fr;} }
+  .why-block .triad-mini{width:140px; flex-shrink:0; margin:0 auto;}
+
+  /* ===== SERVICOS ===== */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem;
+  }
+  @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{
+    position:relative; border-radius:20px; overflow:hidden; min-height:230px;
+    display:flex; align-items:flex-end; color:#fff; isolation:isolate;
+    transition:transform .3s ease;
+  }
+  .service-card:hover{transform:translateY(-6px);}
+  .service-card img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:saturate(1.05);
+  }
+  .service-card::before{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(180deg, rgba(22,48,42,0.15) 0%, rgba(22,48,42,0.92) 88%);
+  }
+  .service-card .content{padding:1.4rem 1.4rem 1.5rem;}
+  .service-card .idx{font-family:'Space Mono',monospace; font-size:.72rem; color:var(--gold); letter-spacing:.14em;}
+  .service-card h3{font-size:1.12rem; color:#fff; margin-top:.3rem;}
+
+  /* ===== CLIENTES ===== */
+  .clients-intro{max-width:60ch;}
+  .clients-grid{
+    margin-top:2.25rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:1rem;
+  }
+  .client-tile{
+    background:var(--limestone); border:1px solid var(--line); border-radius:14px;
+    aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:.9rem;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .client-tile:hover{border-color:var(--clay); transform:translateY(-3px);}
+  .client-tile img{max-height:100%; max-width:100%; object-fit:contain; filter:grayscale(15%);}
+
+  /* ===== QUEM SOMOS ===== */
+  .team-grid{display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:2.5rem;}
+  @media (max-width:760px){ .team-grid{grid-template-columns:1fr;} }
+  .team-card{
+    background:var(--limestone); border:1px solid var(--line); border-radius:22px; overflow:hidden;
+    display:grid; grid-template-columns:150px 1fr;
+  }
+  @media (max-width:520px){ .team-card{grid-template-columns:1fr;} }
+  .team-card img{width:100%; height:100%; object-fit:cover; min-height:180px;}
+  .team-card .info{padding:1.5rem 1.4rem;}
+  .team-card .role{color:var(--clay); font-weight:600; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em;}
+  .team-card h3{font-size:1.2rem; margin-top:.2rem;}
+  .team-card p{font-size:.92rem; color:#3c453f;}
+
+  /* ===== ARTIGOS ===== */
+  .articles-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem;}
+  @media (max-width:860px){ .articles-grid{grid-template-columns:1fr;} }
+  .article-card{
+    background:var(--limestone); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .article-card:hover{transform:translateY(-5px); box-shadow:0 14px 30px rgba(22,48,42,0.12);}
+  .article-card img{width:100%; aspect-ratio:1/1; object-fit:cover;}
+  .article-card .info{padding:1.25rem 1.3rem 1.5rem; flex:1; display:flex; flex-direction:column;}
+  .article-card time{font-family:'Space Mono',monospace; font-size:.72rem; color:var(--clay); letter-spacing:.06em;}
+  .article-card h3{font-size:1.05rem; margin-top:.5rem;}
+  .article-card .read{margin-top:auto; font-weight:600; font-size:.88rem; color:var(--moss);}
+
+  /* ===== CONTATO ===== */
+  .contact-wrap{
+    background:var(--canopy); color:var(--sand); border-radius:26px; padding:clamp(2rem,5vw,3.5rem);
+    display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;
+  }
+  @media (max-width:820px){ .contact-wrap{grid-template-columns:1fr;} }
+  .contact-wrap h2{color:var(--limestone);}
+  .contact-list{list-style:none; padding:0; margin:1.5rem 0 0; display:flex; flex-direction:column; gap:1rem;}
+  .contact-list li{display:flex; gap:.85rem; align-items:flex-start; font-size:.98rem;}
+  .contact-list svg{flex-shrink:0; margin-top:3px;}
+  form{display:flex; flex-direction:column; gap:.9rem;}
+  form input, form textarea{
+    background:rgba(250,246,239,0.08); border:1px solid rgba(250,246,239,0.28); border-radius:12px;
+    padding:.85rem 1rem; color:var(--sand); font-family:inherit; font-size:.95rem;
+  }
+  form input::placeholder, form textarea::placeholder{color:rgba(250,246,239,0.55);}
+  form textarea{min-height:110px; resize:vertical;}
+  form button{align-self:flex-start;}
+
+  /* ===== LINKS ===== */
+  .links-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:1.1rem; margin-top:2.25rem;}
+  .link-tile{
+    background:var(--limestone); border:1px solid var(--line); border-radius:16px; padding:1.1rem;
+    display:flex; flex-direction:column; align-items:center; gap:.7rem; text-align:center;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .link-tile:hover{transform:translateY(-3px); border-color:var(--moss);}
+  .link-tile img{width:52px; height:52px; border-radius:50%; object-fit:cover;}
+  .link-tile span{font-size:.82rem; font-weight:600;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink); color:rgba(250,246,239,0.75); padding:2.5rem 0;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;}
+  .socials{display:flex; gap:.75rem;}
+  .socials a{
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(250,246,239,0.25);
+    display:flex; align-items:center; justify-content:center; transition:background .2s ease;
+  }
+  .socials a:hover{background:rgba(250,246,239,0.15);}
+
+  [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].is-visible{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    [data-reveal]{opacity:1; transform:none; transition:none;}
+    .service-card, .article-card, .client-tile, .link-tile, .btn{transition:none;}
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--gold); outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#topo" class="brand">
+      <img src="https://static.wixstatic.com/media/bedf6e_be5037c9a0144e18bc321b5ce847e74a~mv2.jpg/v1/fill/w_160,h_160,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/triade_log_fb_edited.jpg" alt="Logo Tríade Consultoria Ambiental">
+      Tríade
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#artigos">Artigos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="mailto:contato@triadeambiental.com.br" aria-label="Enviar e-mail" title="E-mail">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      <a class="icon-btn" href="https://api.whatsapp.com/send?phone=557135999771" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="WhatsApp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.3-.3-.3-.5-.3h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+      </a>
+      <label for="nav-toggle" class="burger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="eyebrow">Consultoria ambiental &middot; Camaçari, Bahia</p>
+        <h1>Soluções ambientais que unem <em>economia, ecologia e sociedade</em>.</h1>
+        <p>A Tríade presta serviços de consultoria especializada na área ambiental, contando com uma equipe multidisciplinar altamente qualificada. Atuamos na resolução de desafios ambientais complexos, integrando diferentes áreas do conhecimento e acumulando sólida experiência em projetos relacionados aos setores imobiliário, de infraestrutura, indústria, transportes, energia, petróleo e gás, mineração, agronegócio, entre outros.</p>
+        <p>Além da consultoria, a Tríade oferece cursos, treinamentos, capacitações profissionais e palestras especializadas nas áreas de saúde, segurança, meio ambiente, qualidade de vida e sustentabilidade, adotando metodologias dinâmicas, práticas e inovadoras, alinhadas às melhores práticas do mercado.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=557135999771" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn btn-ghost" href="#servicos">Conhecer serviços</a>
+        </div>
+      </div>
+      <div class="triad-mark" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <circle cx="120" cy="110" r="92" fill="var(--clay)" opacity="0.68"/>
+          <circle cx="180" cy="110" r="92" fill="var(--moss)" opacity="0.68"/>
+          <circle cx="150" cy="185" r="92" fill="var(--gold)" opacity="0.68"/>
+          <text x="70" y="70" class="lab">Econômica</text>
+          <text x="188" y="70" class="lab">Ecológica</text>
+          <text x="118" y="255" class="lab">Social</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSAO / VISAO / VALORES -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Quem somos</p>
+      <h2 data-reveal>Missão, visão e valores</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card" data-reveal>
+          <div class="ring">M</div>
+          <h3>Missão</h3>
+          <p>Proporcionar soluções sustentáveis para a sociedade e para as empresas, promovendo a melhoria contínua da qualidade ambiental.</p>
+        </div>
+        <div class="pillar-card" data-reveal>
+          <div class="ring">V</div>
+          <h3>Visão</h3>
+          <p>Ser reconhecida como empresa de referência em competência técnica, qualidade, eficiência e responsabilidade ambiental.</p>
+        </div>
+        <div class="pillar-card" data-reveal>
+          <div class="ring">V</div>
+          <h3>Valores</h3>
+          <p>Compromisso &bull; Responsabilidade &bull; Confiança &bull; Resultados</p>
+        </div>
+      </div>
+
+      <div class="why-block" data-reveal>
+        <svg class="triad-mini" viewBox="0 0 300 300" aria-hidden="true">
+          <circle cx="120" cy="110" r="92" fill="var(--clay)" opacity="0.7"/>
+          <circle cx="180" cy="110" r="92" fill="var(--moss)" opacity="0.7"/>
+          <circle cx="150" cy="185" r="92" fill="var(--gold)" opacity="0.7"/>
+        </svg>
+        <div>
+          <h3>Por que Tríade?</h3>
+          <p>O nome Tríade inspira-se em uma das conclusões da Conferência de Estocolmo (1972), que reconheceu a questão ambiental como o resultado da integração de três dimensões indissociáveis: econômica, ecológica e social. Esses pilares norteiam nossa atuação e refletem o equilíbrio que buscamos em cada projeto desenvolvido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICOS -->
+  <section id="servicos" style="background:var(--sand);">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>O que fazemos</p>
+      <h2 data-reveal>Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/8a988e4a61fb4691ada67fa60aae6485.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a988e4a61fb4691ada67fa60aae6485.jpg" alt="Instalação industrial">
+          <div class="content"><span class="idx">Regularização</span><h3>Licenciamento Ambiental</h3></div>
+        </div>
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/249d1fb5cfe34767b316f2797e88cb19.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/249d1fb5cfe34767b316f2797e88cb19.jpg" alt="Cena de agricultura">
+          <div class="content"><span class="idx">Educação</span><h3>Gestão e Educação Ambiental</h3></div>
+        </div>
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/5062a2d51a7c4188a5a2f2b42a937df9.jpg/v1/fill/w_500,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5062a2d51a7c4188a5a2f2b42a937df9.jpg" alt="Inspetores elétricos">
+          <div class="content"><span class="idx">Conformidade</span><h3>Auditoria e Perícia Ambiental</h3></div>
+        </div>
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/f8045be76c834a948ddf06bb64d0b882.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f8045be76c834a948ddf06bb64d0b882.jpg" alt="Trabalhadores em planta de gás">
+          <div class="content"><span class="idx">Pessoas</span><h3>Saúde, Segurança e Meio Ambiente</h3></div>
+        </div>
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/bedf6e_4598f2c7dbcf4cdeb85211b1c793ab70~mv2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/bedf6e_4598f2c7dbcf4cdeb85211b1c793ab70~mv2.jpg" alt="Geocaching / mapeamento">
+          <div class="content"><span class="idx">Territorial</span><h3>Geoprocessamento</h3></div>
+        </div>
+        <div class="service-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/11062b_9bb80664e66345e789e5a98af36bf4bd~mv2_d_5400_3600_s_4_2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_9bb80664e66345e789e5a98af36bf4bd~mv2_d_5400_3600_s_4_2.jpg" alt="Professor palestrando no palco">
+          <div class="content"><span class="idx">Capacitação</span><h3>Cursos e Treinamentos</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES -->
+  <section id="clientes">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Confiança de quem já atendemos</p>
+      <h2 data-reveal>Conheça nossos clientes</h2>
+      <p class="clients-intro" data-reveal>Empresas dos setores imobiliário, industrial, energia, saúde e agronegócio que já contaram com a Tríade em seus projetos ambientais.</p>
+      <div class="clients-grid" data-reveal>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_d05f1795fe7146d181900177732bd3fc~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide1_JPG.jpg" alt="Cliente Tríade 1"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_a73e25504c2a44ef89d1405d0f3ebdba~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide2_JPG.jpg" alt="Cliente Tríade 2"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_ffb0f70c0e214493aab9a26cbed410c2~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide3_JPG.jpg" alt="Cliente Tríade 3"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_b2759a5b864a4d68a372358c36daf6e3~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide4_JPG.jpg" alt="Cliente Tríade 4"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_9dcfd6693f58489894ccab05068a2e8f~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide14_JPG.jpg" alt="Cliente Tríade 14"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_a0878c7d610247c7bbda87e3fcc79ffa~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide11_JPG.jpg" alt="Cliente Tríade 11"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_38988f887b1e4cc0a9fc3f75e00c9fcc~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide35_JPG.jpg" alt="Cliente Tríade 35"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_af77f310cd0e4b42a3942ae642ff8bca~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide13_JPG.jpg" alt="Cliente Tríade 13"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_ff00a9faa96a4b848cb91b099b92451c~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide33_JPG.jpg" alt="Cliente Tríade 33"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_6d0f4dc22aa44fa08387c09ec1a788ea~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide29_JPG.jpg" alt="Cliente Tríade 29"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_24069d29ac1248eaa66282a7a6f3b262~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide26_JPG.jpg" alt="Cliente Tríade 26"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_df28ddd83a144d1fa00bb94ffabd08b3~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide20_JPG.jpg" alt="Cliente Tríade 20"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_281866c2ac6a42b9a1166d0b178422e7~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide32_JPG.jpg" alt="Cliente Tríade 32"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_3b4e134ea44743e283b8ba969ec1684f~mv2.jpg/v1/fill/w_220,h_76,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/falco1.jpg" alt="Cliente Falcão"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_43d440a1dcb6435db72fe7551d16d52b~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide28_JPG.jpg" alt="Cliente Tríade 28"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_70afe4baf1684973be51c701ca1a7119~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide34_JPG.jpg" alt="Cliente Tríade 34"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_f1e86fcd07f645669468f825a6d2e0e8~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide12_JPG.jpg" alt="Cliente Tríade 12"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_dcbb133355af437a955daa4aa30afb3d~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide17_JPG.jpg" alt="Cliente Tríade 17"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_e8cef7f734cd49628e6c1c2c575d6ce6~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide25_JPG.jpg" alt="Cliente Tríade 25"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_819466a2786f4b029d8900ddacecc8eb~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide24_JPG.jpg" alt="Cliente Tríade 24"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_9d7fc8a962e94765828ebf9b2c9539b9~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide22_JPG.jpg" alt="Cliente Tríade 22"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_941a776a66e44a54ae184518aedc0ff2~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide27_JPG.jpg" alt="Cliente Tríade 27"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_8f144bc6703c4126a8029925f216b723~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide15_JPG.jpg" alt="Cliente Tríade 15"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_5bc11eea2cdf44b4b1e15c00c1a60f75~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide31_JPG.jpg" alt="Cliente Tríade 31"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_7a32ecc2250647f389d88851ba50db79~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide18_JPG.jpg" alt="Cliente Tríade 18"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_52770b2777484664a0d7d68b8e724fbc~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide23_JPG.jpg" alt="Cliente Tríade 23"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_a9ce3de004c44cefab082ef44aef81c5~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide8_JPG.jpg" alt="Cliente Tríade 8"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_e1e66f742e2d4518bfa9aa4b283836d7~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide21_JPG.jpg" alt="Cliente Tríade 21"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_bcb74fb0a1154f6eb269af716aa242d9~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide19_JPG.jpg" alt="Cliente Tríade 19"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_230ae66aa28a4719ac4e45708aafded2~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide9_JPG.jpg" alt="Cliente Tríade 9"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_bb2befb2c4d24d8a9ecfa3392ec5dbe7~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide16_JPG.jpg" alt="Cliente Tríade 16"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_f73eacaa9eb0479c9e51a8a20a4e5daa~mv2.jpg/v1/fill/w_220,h_219,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slide10_JPG.jpg" alt="Cliente Tríade 10"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_1207d45e2e6e48f3925bdbc98b586c96~mv2.png/v1/fill/w_145,h_144,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/OR.png" alt="Cliente OR"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_6f9f30ca6a4a4861bc3235f6c60cb82d~mv2.png/v1/fill/w_220,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2ms.png" alt="Cliente 2MS"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_e4d7734bb9b540a8aa2a17109f762f06~mv2.png/v1/fill/w_230,h_52,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/amil.png" alt="Cliente Amil"></div>
+        <div class="client-tile"><img loading="lazy" src="https://static.wixstatic.com/media/bedf6e_680365160b144bf48cc06ce95af4f9fb~mv2.jpeg/v1/fill/w_200,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/BELOV.jpeg" alt="Cliente Belov"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos" style="background:var(--sand);">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Time</p>
+      <h2 data-reveal>Quem somos</h2>
+      <div class="team-grid">
+        <div class="team-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/bedf6e_82da17c791f54f4fa8c1302569e67b1b~mv2.png/v1/crop/x_114,y_0,w_785,h_819/fill/w_460,h_480,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/valeria.png" alt="Valéria Pereira">
+          <div class="info">
+            <p class="role">Diretora Administrativa</p>
+            <h3>Valéria Pereira</h3>
+            <p>Bacharel em Administração de Empresas, pós-graduada em Gestão Ambiental e Desenvolvimento Sustentável. Há mais de 15 anos desenvolve atividades de gestão, recursos humanos e relação com clientes. Na Tríade atua na gestão de projetos e no acompanhamento junto aos órgãos ambientais e regulatórios.</p>
+          </div>
+        </div>
+        <div class="team-card" data-reveal>
+          <img src="https://static.wixstatic.com/media/bedf6e_e6444643190a4550948f170e12f99360~mv2.png/v1/crop/x_138,y_0,w_1755,h_1985/fill/w_460,h_520,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/francisco.png" alt="Francisco Pimenta">
+          <div class="info">
+            <p class="role">Diretor Técnico</p>
+            <h3>Francisco Pimenta</h3>
+            <p>Biólogo, especialista em Auditoria e Perícia Ambiental e mestre em Planejamento Ambiental. Há mais de 15 anos trabalha na coordenação e execução de estudos ambientais para fins de Licenciamento e Gestão Ambiental. Na Tríade atua no planejamento, coordenação e execução de projetos, auditorias e assessorias na área de Meio Ambiente e Engenharia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIGOS -->
+  <section id="artigos">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Conteúdo</p>
+      <h2 data-reveal>Artigos</h2>
+      <div class="articles-grid">
+        <a class="article-card" data-reveal href="https://www.triadeambiental.com.br/post/e-book-gr%C3%A1tis-esg-a%C3%A7%C3%B5es-pr%C3%A1ticas-para-obras-civis" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_b6db74f085d347ee9a233faa09dc035f~mv2.png/v1/fill/w_292,h_292,fp_0.50_0.50,q_95,enc_avif,quality_auto/bedf6e_b6db74f085d347ee9a233faa09dc035f~mv2.webp" alt="E-book grátis - ESG: ações práticas para obras civis">
+          <div class="info">
+            <time>5 de set. de 2022 &middot; 1 min de leitura</time>
+            <h3>E-book grátis - ESG: ações práticas para obras civis</h3>
+            <span class="read">Ler artigo &rarr;</span>
+          </div>
+        </a>
+        <a class="article-card" data-reveal href="https://www.triadeambiental.com.br/post/biologia-desafios-e-oportunidades" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_3f1a3d398e2d4d3db7686c578bb8ac09~mv2.png/v1/fill/w_292,h_292,fp_0.50_0.50,q_95,enc_avif,quality_auto/bedf6e_3f1a3d398e2d4d3db7686c578bb8ac09~mv2.webp" alt="Biologia: desafios e oportunidades">
+          <div class="info">
+            <time>2 de set. de 2020 &middot; 1 min de leitura</time>
+            <h3>Biologia: desafios e oportunidades</h3>
+            <span class="read">Ler artigo &rarr;</span>
+          </div>
+        </a>
+        <a class="article-card" data-reveal href="https://www.triadeambiental.com.br/post/ebookgratisctfapptriade" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_6b9b4fef2d5141bf96abf65982ec4799~mv2.jpg/v1/fill/w_292,h_292,fp_0.50_0.50,q_90,enc_avif,quality_auto/bedf6e_6b9b4fef2d5141bf96abf65982ec4799~mv2.webp" alt="Ebook grátis - CTF/APP - Regularidade ambiental">
+          <div class="info">
+            <time>1 de jun. de 2020 &middot; 2 min de leitura</time>
+            <h3>Ebook grátis - CTF/APP - Regularidade ambiental</h3>
+            <span class="read">Ler artigo &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="background:var(--sand);">
+    <div class="wrap">
+      <div class="contact-wrap" data-reveal>
+        <div>
+          <p class="eyebrow" style="color:var(--gold);">Fale com a gente</p>
+          <h2>Contato</h2>
+          <ul class="contact-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>R. Francisco Drumond, 41 - Centro, Camaçari - BA, 42801-170, Brasil</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:contato@triadeambiental.com.br">contato@triadeambiental.com.br</a>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2z"/></svg>
+              <span>(71) 98626-9705 / 99655-9181</span>
+            </li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=557135999771" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+        <form onsubmit="event.preventDefault(); this.reset(); document.getElementById('form-msg').style.display='block';">
+          <input type="text" name="nome" placeholder="Nome" required>
+          <input type="email" name="email" placeholder="E-mail" required>
+          <input type="tel" name="telefone" placeholder="Telefone">
+          <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <p id="form-msg" style="display:none; color:var(--gold); font-size:.9rem;">Obrigado pelo envio!</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Órgãos e sistemas</p>
+      <h2 data-reveal>Links úteis</h2>
+      <div class="links-grid" data-reveal>
+        <a class="link-tile" href="http://sistema.seia.ba.gov.br/" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_5211b44028c2424297129ba426e75868~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Seia.jpg" alt="Seia"><span>Seia</span>
+        </a>
+        <a class="link-tile" href="http://www.inema.ba.gov.br/" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_b31684ff7eb34cc98372c1c346ca2286~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Inema-logo.jpg" alt="Inema"><span>Inema</span>
+        </a>
+        <a class="link-tile" href="https://servicos.ibama.gov.br/ctf/sistema.php" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_fe2a01facb3e498f97faad10070312b6~mv2.jpg/v1/fill/w_97,h_97,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/t6eedit-1024x993.jpg" alt="Ibama"><span>Ibama (serviços)</span>
+        </a>
+        <a class="link-tile" href="https://servicos.sedur.salvador.ba.gov.br/#/portal/home" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_5214946edf3243f99c88281ba2c53725~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Sucom.jpg" alt="Sedur Salvador"><span>Sedur - Salvador</span>
+        </a>
+        <a class="link-tile" href="http://sedur.camacari.ba.gov.br/portal/index.php" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_7f67899d63744ad697cc5bf77cc5124a~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Sedur%20Cama.jpg" alt="Sedur Camaçari"><span>Sedur - Camaçari</span>
+        </a>
+        <a class="link-tile" href="http://semarh.laurodefreitas.ba.gov.br/" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_557f1b427d1041128fb21681e3cf9ec4~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Semarh%20Lauro.jpg" alt="Semarh Lauro de Freitas"><span>Semarh - Lauro de Freitas</span>
+        </a>
+        <a class="link-tile" href="http://mapa.geobahia.ba.gov.br/" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_78f770df4dbe4105860c72ea3aa37a9f~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Geobahia.jpg" alt="Geobahia"><span>Geobahia</span>
+        </a>
+        <a class="link-tile" href="https://www.car.gov.br/#/" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bedf6e_513f19c290294808975b6e1db3eecd15~mv2.jpg/v1/fill/w_85,h_85,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cadastro-Ambiental-Rural_MP.jpg" alt="CAR"><span>CAR</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy;2026 por Tríade Consultoria Ambiental.</span>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/tr%C3%ADade-consultoria-ambiental/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.98 8.65 22 11 22 14.8V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.4-2.1 2.9V21H9z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/triadeambiental/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.6V3.2C16.4 3.1 15.3 3 14 3c-2.5 0-4.3 1.6-4.3 4.4v2.4H7v3.2h2.7v8z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/triadeconsultoriaambiental/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));
+
+  // fecha o menu mobile ao clicar em um link
+  document.querySelectorAll('#primary-nav a').forEach(a=>{
+    a.addEventListener('click', ()=>{ document.getElementById('nav-toggle').checked = false; });
+  });
+</script>
+
+</body>
+</html>
